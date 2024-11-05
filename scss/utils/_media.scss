@@ -1,0 +1,19 @@
+// Миксин для медиа-запросов
+@mixin media($max-width) {
+    @media (max-width: $max-width) {
+        @content;
+    }
+}
+
+
+// @include media(1200px) {
+// }
+
+// @include media(992px) {
+// }
+
+// @include media(768px) {
+// }
+
+// @include media(567px) {
+// }

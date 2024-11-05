@@ -1,0 +1,290 @@
+/* ПОДКЛЮЧЕНИЕ ШРИФТОВ */
+@font-face {
+    font-family: "Arial Regular";
+    src: local("Arial Regular"),
+        url("../fonts/Arial_Regular/ArialMT.woff2") format("woff2"),
+        url("../fonts/Arial_Regular/ArialMT.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Inter Regular";
+    src: local("Inter Regular"),
+        url("../fonts/Inter_Regular/Inter-Regular.woff2") format("woff2"),
+        url("../fonts/Inter_Regular/Inter-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --------------------------------------------------------- */
+
+/* БАЗОВЫЕ СТИЛИ */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    --container-width: 1500px;
+    --container-padding: 30px;
+}
+
+.page {
+    min-width: 320px;
+    padding-top: 131px; // Отступ от фиксированного меню
+
+    font-family: "Inter Regular", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: $txt-grey;
+    /* overflow-x: hidden; */
+
+    @include media(1200px) {
+        padding-top: 101px; // Отступ от фиксированного меню
+    }
+    @include media(1024px) {
+        padding-top: 81px;
+    }
+    @include media(768px) {
+        padding-top: 61px;
+    }
+}
+
+/* --------------------------------------------------------- */
+
+/* ОСНОВНЫЕ СТИЛИ ДЛЯ ОБЩИХ ЭЛЕМЕНТОВ */
+
+.container {
+    max-width: var(--container-width);
+    width: 100%;
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 50px;
+
+    @include media(992px) {
+        margin-bottom: 30px;
+    }
+
+    @include media(768px) {
+        margin-bottom: 20px;
+    }
+}
+
+.title-signature {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+
+    @include media(1200px) {
+        margin-bottom: 70px;
+    }
+
+    @include media(992px) {
+        margin-bottom: 60px;
+    }
+
+    @include media(768px) {
+        margin-bottom: 50px;
+    }
+
+    @include media(567px) {
+        margin-bottom: 40px;
+    }
+}
+
+.section-title {
+    font-family: "Inter Regular", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 140%;
+    text-align: center;
+
+    &--white {
+        color: $txt-white;
+    }
+
+    @include media(1200px) {
+        font-size: 32px;
+    }
+
+    @include media(992px) {
+        font-size: 28px;
+    }
+
+    @include media(768px) {
+        font-size: 24px;
+    }
+
+    @include media(576px) {
+        font-size: 20px;
+    }
+}
+
+.h3-title {
+    font-family: "Inter Regular", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+
+    @include media(1200px) {
+        font-size: 18px;
+    }
+
+    @include media(992px) {
+        font-size: 16px;
+    }
+
+    @include media(768px) {
+        font-size: 14px;
+    }
+    @include media(576px) {
+        font-size: 13px;
+    }
+    @include media(480px) {
+        font-size: 12px;
+    }
+}
+
+.section-descr {
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 170%;
+
+    &--white {
+        color: $txt-white;
+    }
+
+    @include media(1200px) {
+        font-size: 16px;
+    }
+
+    @include media(992px) {
+        font-size: 14px;
+    }
+
+    @include media(768px) {
+        font-size: 13px;
+    }
+
+    @include media(576px) {
+        font-size: 12px;
+    }
+    @include media(480px) {
+        font-size: 10px;
+    }
+}
+
+.section-offset {
+    padding: 120px 0;
+
+    @include media(1200px) {
+        padding: 110px 0;
+    }
+
+    @include media(992px) {
+        padding: 90px 0;
+    }
+
+    @include media(768px) {
+        padding: 60px 0;
+    }
+
+    @include media(576px) {
+        padding: 50px 0;
+    }
+}
+
+.stop-scroll {
+    overflow: hidden;
+}
+
+// Сетка
+.short-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 240px));
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    row-gap: 50px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__item:nth-child(4) {
+        @include media(1200px) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+    }
+
+    @include media(992px) {
+        justify-content: space-evenly;
+    }
+}
+
+.big-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 540px));
+    justify-content: space-evenly;
+
+    row-gap: 65px;
+    column-gap: 20px;
+
+    @include media(1200px) {
+        row-gap: 55px;
+    }
+
+    @include media(992px) {
+        row-gap: 45px;
+        column-gap: 15px;
+    }
+
+    @include media(768px) {
+        row-gap: 35px;
+    }
+
+    @include media(567px) {
+        row-gap: 25px;
+        column-gap: 10px;
+    }
+    &__item {
+    }
+}
+
+/* --------------------------------------------------------- */
+
+.hide-block {
+    display: none !important;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}

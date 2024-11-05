@@ -1,0 +1,33 @@
+// Переменные
+@import "abstracts/variables";
+
+// Утилиты
+@import "utils/media";
+@import "utils/utilities";
+
+// Сброс стилей и базовые стили
+@import "base/reset";
+@import "base/main";
+@import "base/animation";
+
+// Компоненты
+@import "components/hover_effects";
+@import "components/burger";
+@import "components/btn";
+@import "components/underline";
+@import "components/underline";
+@import "components/float-label";
+@import "components/form";
+
+// Секции
+@import "sections_base/header";
+
+@import "sections/hero";
+@import "sections/service";
+@import "sections/team";
+@import "sections/skills";
+@import "sections/portfolio";
+@import "sections/reviews";
+@import "sections/mail";
+
+@import "sections_base/footer";

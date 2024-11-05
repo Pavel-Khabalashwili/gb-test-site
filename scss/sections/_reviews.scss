@@ -1,0 +1,124 @@
+.reviews {
+    background-color: $section-pink;
+
+    &-list {
+        row-gap: 150px;
+        @include media(1200px) {
+            row-gap: 100px;
+        }
+
+        @include media(992px) {
+            row-gap: 60px;
+        }
+        @include media(768px) {
+            grid-template-columns: auto;
+        }
+        @include media(567px) {
+            row-gap: 30px;
+        }
+    }
+
+    &-list__item {
+        display: grid;
+        grid-template-columns: minmax(auto, 100px) minmax(auto, 330px);
+        justify-content: space-between;
+        column-gap: 50px;
+        max-width: 470px;
+
+        @include media(1200px) {
+            column-gap: 30px;
+        }
+
+        @include media(992px) {
+            column-gap: 20px;
+        }
+
+        @include media(768px) {
+        grid-template-columns: auto minmax(auto, 330px);
+
+            justify-content: center;
+
+            column-gap: 10px;
+        }
+
+        @include media(567px) {
+            column-gap: 5px;
+        }
+    }
+}
+
+.review-circle {
+    width: 99px;
+    height: 99px;
+    border-radius: 50%;
+
+    background-color: #787878;
+
+    @include media(1200px) {
+        width: 89px;
+        height: 89px;
+    }
+
+    @include media(992px) {
+        width: 79px;
+        height: 79px;
+    }
+
+    @include media(768px) {
+        width: 69px;
+        height: 69px;
+    }
+
+    @include media(567px) {
+        width: 59px;
+        height: 59px;
+    }
+}
+
+.review-content {
+    &__descr {
+        margin-bottom: 35px;
+
+        @include media(1200px) {
+            margin-bottom: 25px;
+        }
+
+        @include media(992px) {
+            margin-bottom: 15px;
+        }
+
+        @include media(768px) {
+            margin-bottom: 10px;
+        }
+
+        @include media(567px) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__name {
+    }
+    &__prof {
+        font-size: 16px;
+        color: #ffdd99;
+
+        @include media(1200px) {
+            font-size: 14px;
+        }
+
+        @include media(992px) {
+            font-size: 12px;
+        }
+
+        @include media(768px) {
+            font-size: 10px;
+        }
+
+        @include media(576px) {
+            font-size: 8px;
+        }
+        @include media(480px) {
+            font-size: 6px;
+        }
+    }
+}
